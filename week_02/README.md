@@ -1,9 +1,8 @@
 <h1 align="center">Laporan Praktikum Week 2</h1>
-<h4>
-Oleh: <br>
+
+> Oleh: <br>
 Danendra Nayaka Passadhi <br>
 TI-3H / 07
-</h4>
 
 ## Teori
 ### Hello World Dart Style
@@ -15,8 +14,13 @@ void main() {
 }
 ~~~
 
-**Output yang dikeluarkan:**
-![output](image/image.png)
+**Output yang dikeluarkan:** <br>
+<p align="center">
+  <img 
+    src="./image/image.png" 
+    alt="code" 
+  >
+</p>
 
 
 ## Tugas Praktikum
