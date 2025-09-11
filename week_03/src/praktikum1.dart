@@ -10,9 +10,9 @@ void main() {
   }
 
   if (test == "test2") print("Test2 again");
-
-String testt = "true";
-if (testt == "true") {
-   print("Kebenaran");
-}
+  
+  String testt = "true";
+  if (testt == "true") {
+    print("Kebenaran");
+   }
 }
