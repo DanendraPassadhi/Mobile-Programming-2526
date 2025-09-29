@@ -2,28 +2,32 @@
 <h4>
 Oleh: <br>
 
-| Nama                      | Kelas | Absen |
-| ------------------------- | ----- | ---   |
-| Danendra Nayaka Passadhi  | TI-3H | 07    |
+| Nama                     | Kelas | Absen |
+| ------------------------ | ----- | ----- |
+| Danendra Nayaka Passadhi | TI-3H | 07    |
 
 ## Praktikum 1 <br> Membuat Project Flutter Baru
+
 ![Prak1](./image/prak01-01.png)
 
 ---
 
 ## Praktikum 2 <br> Menghubungkan Perangkat Android atau Emulator
+
 ![Prak2](./image/prak02-01.png)
 ![Prak2](./image/prak02-02.png)
 
 ---
 
 ## Praktikum 3 <br> Membuat Repository GitHub dan Laporan Praktikum
+
 ![prak3](./image/prak03-01.png)
 https://github.com/DanendraPassadhi/Mobile-Programming-2526
 
 ---
 
 ## Praktikum 4 <br> Menerapkan Widget Dasar
+
 ### Langkah 1 <br> `Text Widget`
 
 ```Dart
@@ -47,6 +51,7 @@ class MyTextWidget extends StatelessWidget {
 ![Prak4](./image/prak04-01.gif)
 
 ### Langkah 2 <br> `Image Widget`
+
 ```Dart
 import 'package:flutter/material.dart';
 
@@ -71,6 +76,7 @@ class MyImageWidget extends StatelessWidget {
 ## Praktikum 5 <br> Menerapkan Widget Material Design dan iOS Cupertino
 
 ### Langkah 1 <br> `Cupertino Button dan Loading Bar`
+
 ```Dart
 return MaterialApp(
       home: Container(
@@ -94,6 +100,7 @@ return MaterialApp(
 ![Prak5](./image/prak05-01.gif)
 
 ### Langkah 2 <br> `Floating Action Button (FAB)`
+
 ```Dart
 return MaterialApp(
       home: Scaffold(
@@ -113,6 +120,7 @@ return MaterialApp(
 ![Prak5](./image/prak05-02.gif)
 
 ### Langkah 3 <br> `Scaffold Widget`
+
 ```Dart
 import 'package:flutter/material.dart';
 
@@ -183,7 +191,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment Counter',
         child: const Icon(Icons.add),
-      ), 
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
@@ -195,6 +203,7 @@ class _MyHomePageState extends State<MyHomePage> {
 ![Prak5](./image/prak05-03.gif)
 
 ### Langkah 4 <br> Dialog Widget
+
 ```Dart
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -259,6 +268,7 @@ showAlertDialog(BuildContext context) {
 ![prak5](./image/prak05-04.gif)
 
 ### Langkah 5 <br> Input dan Selection Widget
+
 ```Dart
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -286,6 +296,7 @@ class MyApp extends StatelessWidget {
 ![prak5](./image/prak05-05.gif)
 
 ### Langkah 6 <br> Date and Time Pickers
+
 ```Dart
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -365,3 +376,112 @@ class _MyHomePageState extends State<MyHomePage> {
 **Output:**
 
 ![prak5](./image/prak05-06.gif)
+
+---
+
+# TUGAS PRAKTIKUM
+## Menambahkan Tombol
+
+### Hot Reload Pertama
+
+![TuPrak](./image/tuprak01.png)
+
+### Menambahkan tombol
+
+![TuPrak](./image/tuprak02.png)
+
+### First Step
+
+![TuPrak](./image/tuprak03.gif)
+
+## Memperindah Tampilan Aplikasi
+### Mengekstrak widget
+
+```Dart
+// ...
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var appState = context.watch<MyAppState>();
+    var pair = appState.current;                 // ← Add this.
+
+    return Scaffold(
+      body: Column(
+        children: [
+          Text('A random AWESOME idea:'),
+          Text(pair.asLowerCase),                // ← Change to this.
+          ElevatedButton(
+            onPressed: () {
+              appState.getNext();
+            },
+            child: Text('Next'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ...
+```
+
+**Lalu dilakukan refactor, hingga kode menjadi seperti berikut:**
+```Dart
+// ...
+
+class BigCard extends StatelessWidget {
+  const BigCard({
+    super.key,
+    required this.pair,
+  });
+
+  final WordPair pair;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(pair.asLowerCase);
+  }
+}
+
+// ...
+```
+
+### Menambahkan Kartu
+
+![TuPrak](./image/tuprak04.gif)
+
+### Tema dan gaya
+
+![TuPrak](./image/tuprak05.png)
+
+### TextTheme
+
+![TuPrak](./image/tuprak06.gif)
+
+### Menempatkan UI di tengah
+
+![TuPrak](./image/tuprak07.png)
+
+**Setelah dilakukan refactor dengan `wrap with center`:**
+![TuPrak](./image/tuprak08.png)
+
+**Penyesuaian Tampilan**
+![TuPrak](./image/tuprak09.png)
+
+## Menambahkan fungsi
+### Menambahkan logika bisnis
+![TuPrak](./image/tuprak10.png)
+
+### Menambahkan tombol
+![TuPrak](./image/tuprak11.gif)
+
+## Menambahkan kolom samping navigasi
+### Responsibilitas
+![TuPrak](./image/tuprak12.gif)
+
+### Kesesuaian fungsi tombol dan widget
+![TuPrak](./image/tuprak13.gif)
+
+# Menambahkan halaman baru
+![TuPrak](./image/tuprak14.gif)
