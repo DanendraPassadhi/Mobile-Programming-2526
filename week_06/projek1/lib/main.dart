@@ -26,6 +26,69 @@ class MyApp extends StatelessWidget {
     );
   }
 
+   Widget _buildRecommendationCard(
+    String name,
+    String imagePath,
+    String rating,
+    String distance,
+  ) {
+    return Card(
+      margin: const EdgeInsets.only(right: 12),
+      clipBehavior: Clip.antiAlias, 
+      child: SizedBox(
+        width: 160,
+        height: 200, 
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded( 
+              child: SizedBox(
+                width: double.infinity,
+                child: Image.asset(
+                  imagePath,
+                  fit: BoxFit.cover, 
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    name,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                    ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  const SizedBox(height: 4),
+                  Row(
+                    children: [
+                      const Icon(Icons.star, size: 16, color: Colors.amber),
+                      const SizedBox(width: 4),
+                      Text(rating),
+                      const SizedBox(width: 8),
+                      const Icon(
+                        Icons.location_on,
+                        size: 16,
+                        color: Colors.grey,
+                      ),
+                      const SizedBox(width: 4),
+                      Text(distance),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     Widget titleSection = Container(
@@ -50,7 +113,7 @@ class MyApp extends StatelessWidget {
               ],
             ),
           ),
-          Icon(Icons.star, color: Colors.red),
+          const Icon(Icons.star, color: Colors.red),
           const Text('7'),
         ],
       ),
@@ -76,23 +139,58 @@ class MyApp extends StatelessWidget {
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             softWrap: true,
           ),
-          const SizedBox(height: 16), // Spacer
+          const SizedBox(height: 16),
           Container(
             padding: const EdgeInsets.only(left: 16),
             decoration: const BoxDecoration(
-              border: Border(
-                left: BorderSide(
-                  color: Colors.grey,
-                  width: 2,
-                ),
-              ),
+              border: Border(left: BorderSide(color: Colors.grey, width: 2)),
             ),
             child: const Text(
               'Created by Danendra Nayaka Passadhi - 2341720144',
-              style: TextStyle(
-                color: Colors.grey,
-                fontStyle: FontStyle.italic,
-              ),
+              style: TextStyle(color: Colors.grey, fontStyle: FontStyle.italic),
+            ),
+          ),
+        ],
+      ),
+    );
+
+        Widget recommendationSection = Container(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Padding(
+            padding: EdgeInsets.only(bottom: 12),
+            child: Text(
+              'Rekomendasi Wisata Lainnya',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          SizedBox(
+            height: 220, 
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              physics: const BouncingScrollPhysics(), 
+              children: [
+                _buildRecommendationCard(
+                  'Goa Batu Tapak Raja',
+                  'images/goa_batu.png',
+                  '4.5',
+                  '30 km',
+                ),
+                _buildRecommendationCard(
+                  'Gunung Parung',
+                  'images/gunung_parung.png',
+                  '4.8',
+                  '30 km',
+                ),
+                _buildRecommendationCard(
+                  'Hutan Mangrove',
+                  'images/mangroeve.png',
+                  '4.3',
+                  '24 km',
+                ),
+              ],
             ),
           ),
         ],
@@ -114,6 +212,7 @@ class MyApp extends StatelessWidget {
             titleSection,
             buttonSection,
             textSection,
+            recommendationSection,
           ],
         ),
       ),
