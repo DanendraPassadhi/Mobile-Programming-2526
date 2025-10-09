@@ -376,3 +376,8 @@ class ItemPage extends StatelessWidget {
 **Hasil Visualisasi:**
 
 ![Visualisasi](./images/projek2-1.gif)
+
+
+**Setelah Penambahan Go_Router**
+
+![Visualisasi](./images/projek2-2.gif)
