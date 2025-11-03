@@ -4,14 +4,15 @@ import 'package:flutter/material.dart';
 import '../provider/plan_provider.dart';
 
 class PlanScreen extends StatefulWidget {
-  const PlanScreen({super.key});
+  final Plan plan;
+  const PlanScreen({super.key, required this.plan});
 
   @override
-  State createState() => _PlanScreenState();
+  State<PlanScreen> createState() => _PlanScreenState();
 }
 
 class _PlanScreenState extends State<PlanScreen> {
-  late ScrollController scrollController;
+  late final ScrollController scrollController;
 
   @override
   void initState() {
@@ -23,18 +24,28 @@ class _PlanScreenState extends State<PlanScreen> {
   }
 
   @override
+  void dispose() {
+    scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final plansNotifier = PlanProvider.of(context);
+
     return Scaffold(
-      appBar: AppBar(title: const Text('Master Plan'),
-      backgroundColor: Colors.purple,
-      foregroundColor: Colors.white),
-      body: ValueListenableBuilder<Plan>(
-        valueListenable: PlanProvider.of(context),
-        builder: (context, plan, child) {
+      appBar: AppBar(title: Text(widget.plan.name)),
+      body: ValueListenableBuilder<List<Plan>>(
+        valueListenable: plansNotifier,
+        builder: (context, plans, child) {
+          final currentPlan = plans.firstWhere(
+            (p) => p.name == widget.plan.name,
+            orElse: () => widget.plan,
+          );
           return Column(
             children: [
-              Expanded(child: _buildList(plan)),
-              SafeArea(child: Text(plan.completenessMessage)),
+              Expanded(child: _buildList(currentPlan)),
+              SafeArea(child: Text(currentPlan.completenessMessage)),
             ],
           );
         },
@@ -42,15 +53,6 @@ class _PlanScreenState extends State<PlanScreen> {
       floatingActionButton: _buildAddTaskButton(context),
     );
   }
-
-  @override
-  void dispose() {
-    scrollController.dispose();
-    super.dispose();
-  }
-
-  // FloatingActionButton is built using the PlanProvider; see the
-  // `_buildAddTaskButton(BuildContext)` that accepts the context.
 
   Widget _buildList(Plan plan) {
     return ListView.builder(
@@ -62,13 +64,16 @@ class _PlanScreenState extends State<PlanScreen> {
   }
 
   Widget _buildTaskTile(Task task, int index, BuildContext context) {
-    ValueNotifier<Plan> planNotifier = PlanProvider.of(context);
+    final planNotifier = PlanProvider.of(context);
     return ListTile(
       leading: Checkbox(
         value: task.complete,
         onChanged: (selected) {
-          Plan currentPlan = planNotifier.value;
-          planNotifier.value = Plan(
+          final plans = planNotifier.value;
+          final planIndex = plans.indexWhere((p) => p.name == widget.plan.name);
+          if (planIndex == -1) return;
+          final currentPlan = plans[planIndex];
+          final updatedPlan = Plan(
             name: currentPlan.name,
             tasks: List<Task>.from(currentPlan.tasks)
               ..[index] = Task(
@@ -76,34 +81,45 @@ class _PlanScreenState extends State<PlanScreen> {
                 complete: selected ?? false,
               ),
           );
+          planNotifier.value = List<Plan>.from(plans)
+            ..[planIndex] = updatedPlan;
         },
       ),
       title: TextFormField(
         initialValue: task.description,
         onChanged: (text) {
-          Plan currentPlan = planNotifier.value;
-          planNotifier.value = Plan(
+          final plans = planNotifier.value;
+          final planIndex = plans.indexWhere((p) => p.name == widget.plan.name);
+          if (planIndex == -1) return;
+          final currentPlan = plans[planIndex];
+          final updatedPlan = Plan(
             name: currentPlan.name,
             tasks: List<Task>.from(currentPlan.tasks)
               ..[index] = Task(description: text, complete: task.complete),
           );
+          planNotifier.value = List<Plan>.from(plans)
+            ..[planIndex] = updatedPlan;
         },
       ),
     );
   }
 
   Widget _buildAddTaskButton(BuildContext context) {
-    ValueNotifier<Plan> planNotifier = PlanProvider.of(context);
+    final planNotifier = PlanProvider.of(context);
     return FloatingActionButton(
       child: const Icon(Icons.add),
       backgroundColor: Colors.purple,
       foregroundColor: Colors.white,
       onPressed: () {
-        Plan currentPlan = planNotifier.value;
-        planNotifier.value = Plan(
+        final plans = planNotifier.value;
+        final planIndex = plans.indexWhere((p) => p.name == widget.plan.name);
+        if (planIndex == -1) return;
+        final currentPlan = plans[planIndex];
+        final updatedPlan = Plan(
           name: currentPlan.name,
           tasks: List<Task>.from(currentPlan.tasks)..add(const Task()),
         );
+        planNotifier.value = List<Plan>.from(plans)..[planIndex] = updatedPlan;
       },
     );
   }
