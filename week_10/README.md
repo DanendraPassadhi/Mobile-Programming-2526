@@ -185,5 +185,22 @@ Future<Position> getPosition() async {
 
 > - Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 12".
 
+**Hasil Praktikum:** <br>
 <img src="./image/p6-2.gif" alt="Prototype GIF" width="200" />
+
+---
+
+## Tugas Praktikum 7: <br> `Manajemen Future dengan FutureBuilder`
+
+> **Soal 13**
+> - Apakah ada perbedaan UI dengan praktikum sebelumnya? Mengapa demikian?
+
+↪ Terdapat sedikit perbedaan, karena title tidak ada perubahan sehingga kembali ke default, selain itu UI menjadi lebih efisien, clean, dan reactive. Namun yang paling terlihat adalah delay munculnya lokasi selama 3 detik.
+
+> - Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 13".
+
+**Hasil Praktikum:** <br>
+<img src="./image/p7-1.gif" alt="Prototype GIF" width="200" />
+
+> - Seperti yang Anda lihat, menggunakan FutureBuilder lebih efisien, clean, dan reactive dengan Future bersama UI.
 
