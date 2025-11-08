@@ -8,7 +8,7 @@ Oleh: <br>
 | ------------------------ | ----- | ----- |
 | Danendra Nayaka Passadhi | TI-3H | 07    |
 
-## Tugas Praktikum 1: Dasar State dengan Model-View
+## Tugas Praktikum 1: <br> `Dasar State dengan Model-View`
 
 > **Soal 1** <br>
 > Tambahkan nama panggilan Anda pada title app sebagai identitas hasil pekerjaan Anda.
@@ -35,3 +35,14 @@ Widget build(BuildContext context) {
 > Kemudian cobalah akses di browser URI tersebut dengan lengkap seperti ini. Jika menampilkan data JSON, maka Anda telah berhasil. Lakukan capture milik Anda dan tulis di README pada laporan praktikum. Lalu lakukan commit dengan pesan "W11: Soal 2".
 
 ![Capture](./image/p1-2.png)
+
+> **Soal 3**
+> - Jelaskan maksud kode langkah 5 tersebut terkait `substring` dan `catchError`!
+
+↪ Kode ini berfungsi untuk menjalankan getData(), dan berdasarkan hasilnya:
+- Jika Sukses: Ambil body respons, potong 450 karakter pertamanya (substring), dan tampilkan.
+- Jika Gagal: Ganti result dengan pesan kesalahan dan tampilkan pesan tersebut (catchError).
+
+> - Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 3".
+
+<img src="./image/p1-3.gif" alt="Prototype GIF" width="200" />
