@@ -81,3 +81,34 @@ Widget build(BuildContext context) {
 **Hasil Praktikum:** <br>
 <img src="./image/p3-1.gif" alt="Prototype GIF" width="200" />
 
+> **Soal 6**
+> - Jelaskan maksud perbedaan kode langkah 2 dengan langkah 5-6 tersebut!
+
+↪  Perbedaan pada Metode calculate() (Langkah 2 vs. Langkah 5)
+- Langkah 2: Hanya Sukses
+```Dart
+Future calculate() async {
+  await Future.delayed(const Duration(seconds: 5));
+  completer.complete(42); // Hanya menyelesaikan dengan nilai SUKSES
+}
+```
+Metode ini hanya berfokus pada kasus sukses. Setelah 5 detik, completer diselesaikan dengan nilai 42. Jika terjadi runtime error di dalam calculate() (misalnya, jika Future.delayed gagal), exception tersebut tidak akan ditangkap dan Future yang dikembalikan oleh getNumber() akan gagal secara implisit.
+
+- Langkah 5: Penanganan Kesalahan Eksplisit
+```Dart
+calculate() async {
+  try {
+    await new Future.delayed(const Duration(seconds: 5));
+    completer.complete(42);
+    // throw Exception(); // Jika diaktifkan, akan masuk ke blok catch
+  } catch (_) {
+    completer.completeError({}); // Menyelesaikan Future dengan KESALAHAN
+  }
+}
+```
+Metode ini memastikan bahwa apa pun yang terjadi, `Future` yang dikembalikan oleh `getNumber()` akan diselesaikan secara proper, baik dengan nilai sukses (42) atau dengan kesalahan.
+
+> - Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 6".
+
+**Hasil Praktikum:** <br>
+<img src="./image/p3-2.gif" alt="Prototype GIF" width="200" />
