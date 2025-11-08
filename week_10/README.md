@@ -140,3 +140,8 @@ Metode ini memastikan bahwa apa pun yang terjadi, `Future` yang dikembalikan ole
 
 **Pada Debug Console:** <br>
 <img src="./image/p5-2.png" alt="Debug Console" />
+
+> **Soal 10**
+> - method handleError() tersebut di ElevatedButton, lalu run. Apa hasilnya? Jelaskan perbedaan kode langkah 1 dan 4!
+
+↪ Langkah 1 mendefinisikan sebuah fungsi asinkron yang tugasnya adalah mensimulasikan kegagalan atau kesalahan setelah jangka waktu tertentu. Sedangkan langkah 4 mendefinisikan fungsi asinkron yang tugasnya adalah mengeksekusi returnError() dan menangkap kesalahan yang dilemparnya menggunakan blok try-catch-finally.
