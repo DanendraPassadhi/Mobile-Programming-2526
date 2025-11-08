@@ -213,3 +213,36 @@ Future<Position> getPosition() async {
 
 **Hasil Praktikum:** <br>
 <img src="./image/p7-2.gif" alt="Prototype GIF" width="200" />
+
+---
+
+> **Soal 15**
+> - Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerjaan Anda.
+
+```Dart
+appBar: AppBar(
+        title: const Text('Navigation First Screen Danenn'),
+      ),
+```
+
+> - Silakan ganti dengan warna tema favorit Anda.
+
+↪ Disini saya tetap menggunakan warna default bawaan Jobsheet.
+
+> **Soal 16**
+> - Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
+
+↪ Ketika setiap button diklik, akan berubah warna sesuai dengan isi button. Ini karena setiap ElevatedButton (baik 'Red', 'Green', atau 'Blue') menjalankan kode yang serupa di dalam callback onPressed:
+
+```Dart
+onPressed: () {
+  color = Colors.red.shade700;
+  Navigator.pop(context, color);
+}
+```
+
+> - Gantilah 3 warna pada langkah 5 dengan warna favorit Anda!
+> - Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 16".
+
+**Hasil Praktikum:** <br>
+<img src="./image/p8-1.gif" alt="Prototype GIF" width="200" />
