@@ -45,4 +45,21 @@ Widget build(BuildContext context) {
 
 > - Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 3".
 
+**Hasil Praktikum:** <br>
 <img src="./image/p1-3.gif" alt="Prototype GIF" width="200" />
+
+---
+
+## Tugas Praktikum 2: <br> `Menggunakan await/async untuk menghindari callbacks`
+
+> **Soal 4**
+> - Jelaskan maksud kode langkah 1 dan 2 tersebut!
+
+↪ **Langkah 1**: Berfungsi untuk mendefinisikan fungsi asinkron di dalam State dari sebuah widget (_FuturePageState). Tujuannya adalah untuk membuat simulasi tiga operasi pengambilan data atau pemrosesan yang membutuhkan waktu (masing-masing 3 detik). <br>
+↪ **Langkah 2**: Berfungsi untuk menjumlahkan hasil asinkron dengan method `count()` yang telah didefinisikan sebelumnya.Tujuannya adalah untuk menjalankan tiga operasi asinkron secara berurutan dan menjumlahkan hasil akhirnya untuk kemudian ditampilkan.
+
+> - Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 4".
+
+**Hasil Praktikum:** <br>
+<img src="./image/p2-1.gif" alt="Prototype GIF" width="200" />
+
