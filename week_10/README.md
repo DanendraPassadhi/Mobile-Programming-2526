@@ -63,3 +63,21 @@ Widget build(BuildContext context) {
 **Hasil Praktikum:** <br>
 <img src="./image/p2-1.gif" alt="Prototype GIF" width="200" />
 
+---
+
+## Tugas Praktikum 3: <br> `Menggunakan Completer di Future`
+
+> **Soal 5**
+> - Jelaskan maksud kode langkah 2 tersebut!
+
+↪  Maksud kode pada langkah 2 adalah untuk membuat sebuah operasi asinkron yang berjalan selama 5 detik, dan hasilnya (nilai 42) dikirim kembali melalui mekanisme `Future` yang dikontrol secara manual:
+1. Panggil getNumber() → segera mengembalikan sebuah Future yang kosong.
+2. calculate() berjalan selama 5 detik di latar belakang.
+3. Setelah 5 detik, calculate() memanggil completer.complete(42).
+4. Pada saat itu, Future yang dikembalikan pada langkah 1 selesai dan memberikan nilai 42 kepada pemanggilnya.
+
+> - Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 5".
+
+**Hasil Praktikum:** <br>
+<img src="./image/p3-1.gif" alt="Prototype GIF" width="200" />
+
