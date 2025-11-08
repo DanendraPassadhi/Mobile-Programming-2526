@@ -145,3 +145,45 @@ Metode ini memastikan bahwa apa pun yang terjadi, `Future` yang dikembalikan ole
 > - method handleError() tersebut di ElevatedButton, lalu run. Apa hasilnya? Jelaskan perbedaan kode langkah 1 dan 4!
 
 ↪ Langkah 1 mendefinisikan sebuah fungsi asinkron yang tugasnya adalah mensimulasikan kegagalan atau kesalahan setelah jangka waktu tertentu. Sedangkan langkah 4 mendefinisikan fungsi asinkron yang tugasnya adalah mengeksekusi returnError() dan menangkap kesalahan yang dilemparnya menggunakan blok try-catch-finally.
+
+---
+
+## Tugas Praktikum 6: <br> `Menggunakan Future dengan StatefulWidget`
+
+> **Soal 11**
+> Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerjaan Anda.
+
+```Dart
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Current Location Danenn')),
+      body: Center(child: Text(myPosition)),
+    );
+  }
+```
+
+> **Soal 12**
+> - Jika Anda tidak melihat animasi loading tampil, kemungkinan itu berjalan sangat cepat. Tambahkan delay pada method getPosition() dengan kode await Future.delayed(const Duration(seconds: 3));
+
+```Dart
+Future<Position> getPosition() async {
+    await Future.delayed(const Duration(seconds: 3));
+
+    await Geolocator.requestPermission();
+    await Geolocator.isLocationServiceEnabled();
+    Position? position = await Geolocator.getCurrentPosition();
+    return position;
+}
+```
+
+> - Apakah Anda mendapatkan koordinat GPS ketika run di browser? Mengapa demikian?
+
+↪ Tidak bisa muncul jika run browser, hal ini mungkin dikarenakan browser mungkin secara otomatis memblokir permintaan lokasi karena alasan keamanan. Di sisi lain, aplikasi native (Android/iOS) tidak memerlukan HTTPS. <br>
+↪ Berikut merupakan hasil run pada device: <br>
+<img src="./image/p6-1.jpg" alt="Prototype" width="200" />
+
+> - Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 12".
+
+<img src="./image/p6-2.gif" alt="Prototype GIF" width="200" />
+
