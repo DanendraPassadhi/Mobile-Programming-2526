@@ -248,3 +248,18 @@ onPressed: () {
 
 **Hasil Praktikum:** <br>
 <img src="./image/p8-1.gif" alt="Prototype GIF" width="200" />
+
+---
+
+## Tugas Praktikum 9: <br> `Memanfaatkan async/await dengan Widget Dialog`
+
+> **Soal 17**
+> - Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
+
+↪ Muncul sebuah AlertDialog yang ketika diklik berfungsi seperti sebelumnya, yaitu berubah warna sesuai dengan nama button-nya.
+
+> - Gantilah 3 warna pada langkah 3 dengan warna favorit Anda!
+> - Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 17".
+
+**Hasil Praktikum:** <br>
+<img src="./image/p9-1.gif" alt="Prototype GIF" width="200" />
