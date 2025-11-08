@@ -204,3 +204,12 @@ Future<Position> getPosition() async {
 
 > - Seperti yang Anda lihat, menggunakan FutureBuilder lebih efisien, clean, dan reactive dengan Future bersama UI.
 
+> **Soal 14**
+> - Apakah ada perbedaan UI dengan langkah sebelumnya? Mengapa demikian?
+
+↪ Terdapat penambahan pesan error  jika terjadi kesalahan. Namun dikarenakan tidak ada kesalahan pada saat percobaan, maka belum ada perubahan.
+
+> - Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 14".
+
+**Hasil Praktikum:** <br>
+<img src="./image/p7-2.gif" alt="Prototype GIF" width="200" />
