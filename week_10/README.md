@@ -112,3 +112,13 @@ Metode ini memastikan bahwa apa pun yang terjadi, `Future` yang dikembalikan ole
 
 **Hasil Praktikum:** <br>
 <img src="./image/p3-2.gif" alt="Prototype GIF" width="200" />
+
+---
+
+## Tugas Praktikum 4: <br> `Memanggil Future secara paralel`
+
+> **Soal 7**
+> - Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 7".
+
+**Hasil Praktikum:** <br>
+<img src="./image/p4-1.gif" alt="Prototype GIF" width="200" />
