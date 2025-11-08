@@ -122,3 +122,8 @@ Metode ini memastikan bahwa apa pun yang terjadi, `Future` yang dikembalikan ole
 
 **Hasil Praktikum:** <br>
 <img src="./image/p4-1.gif" alt="Prototype GIF" width="200" />
+
+> **Soal 8**
+> - Jelaskan maksud perbedaan kode langkah 1 dan 4!
+
+↪ Langkah 4 merupakan cara yang lebih ringkas dan bersih untuk mencapai fungsionalitas yang sama dengan Langkah 1. Langkah 1 menggunakan kelas FutureGroup (yang dulunya adalah cara untuk mengelola sekelompok Future), sedangkan langkah 4 menggunakan fungsi statis Future.wait, yang merupakan cara standar dan direkomendasikan di Dart. Kedua kode tersebut menjalankan returnOneAsync(), returnTwoAsync(), dan returnThreeAsync() secara bersamaan (parallel), dan menunggu hingga semua 3 detik penundaan selesai sebelum melanjutkan untuk memproses hasil penjumlahannya.
