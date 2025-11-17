@@ -52,3 +52,8 @@ Oleh: <br>
 ↪ Stream.periodic(const Duration(seconds: 1), (int t) { ... });: Menciptakan sebuah Stream tak terbatas yang menghasilkan event (warna) secara berulang.  <br>
 ↪ int index = t % colors.length;: Menghitung indeks warna secara berputar (0, 1, 2, 0, 1, 2,...) sehingga daftar colors diulang terus-menerus. <br>
 ↪ return colors[index];: Mengambil elemen (warna) dari daftar colors pada index yang telah dihitung dan menjadikannya sebagai peristiwa yang dihasilkan oleh Stream.periodic.
+
+> **Soal 4** <br>
+> Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+
+<img src="./image/p1-1.gif" alt="Prototype GIF" width="200" />
