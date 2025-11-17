@@ -23,3 +23,22 @@ Oleh: <br>
     );
   }
 ```
+
+> **Soal 2** <br>
+> Tambahkan 5 warna lainnya sesuai keinginan Anda pada variabel colors tersebut.
+
+```Dart
+  final List<Color> colors = [
+    Colors.blueGrey,
+    Colors.amber,
+    Colors.deepPurple,
+    Colors.lightBlue,
+    Colors.teal,
+    Colors.indigo,
+    Colors.cyan,
+    Colors.lime,
+    Colors.pink,
+    Colors.orange,
+  ];
+```
+
