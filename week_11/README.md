@@ -43,13 +43,15 @@ Oleh: <br>
 ```
 
 > **Soal 3** <br>
-> - Jelaskan fungsi keyword yield* pada kode tersebut!
+>
+> - Jelaskan fungsi keyword yield\* pada kode tersebut!
 
-↪ yield* digunakan untuk mendelegasikan keluaran (delegate the output) dari generator function saat ini ke generator lain atau Stream atau Iterable. Pada kode program, generator akan menghasilkan elemen (warna) bukan satu per satu menggunakan yield, tetapi secara otomatis meneruskan semua elemen yang datang.
+↪ yield\* digunakan untuk mendelegasikan keluaran (delegate the output) dari generator function saat ini ke generator lain atau Stream atau Iterable. Pada kode program, generator akan menghasilkan elemen (warna) bukan satu per satu menggunakan yield, tetapi secara otomatis meneruskan semua elemen yang datang.
+
 > - Apa maksud isi perintah kode tersebut?
 
-↪ yield*: Seperti dijelaskan di atas, ini adalah keyword yang mendelegasikan keluaran Stream ke fungsi generator saat ini. <br>
-↪ Stream.periodic(const Duration(seconds: 1), (int t) { ... });: Menciptakan sebuah Stream tak terbatas yang menghasilkan event (warna) secara berulang.  <br>
+↪ yield\*: Seperti dijelaskan di atas, ini adalah keyword yang mendelegasikan keluaran Stream ke fungsi generator saat ini. <br>
+↪ Stream.periodic(const Duration(seconds: 1), (int t) { ... });: Menciptakan sebuah Stream tak terbatas yang menghasilkan event (warna) secara berulang. <br>
 ↪ int index = t % colors.length;: Menghitung indeks warna secara berputar (0, 1, 2, 0, 1, 2,...) sehingga daftar colors diulang terus-menerus. <br>
 ↪ return colors[index];: Mengambil elemen (warna) dari daftar colors pada index yang telah dihitung dan menjadikannya sebagai peristiwa yang dihasilkan oleh Stream.periodic.
 
@@ -57,3 +59,14 @@ Oleh: <br>
 > Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
 
 <img src="./image/p1-1.gif" alt="Prototype GIF" width="200" />
+
+> **Soal 5** <br>
+> Jelaskan perbedaan menggunakan listen dan await for (langkah 9) !
+
+| **Fitur** | **`Stream.listen()`** | **`await for`** |
+| --- | --- | --- |
+| **Aliran Kontrol** | Non-blokir (Fire and Forget) | Blokir (Menunggu setiap event secara berurutan) |
+| **Diperlukan `async`** | Tidak | Ya, harus berada di fungsi `async` |
+| **Pengelolaan Langganan** | Manual (Perlu .cancel() di dispose()) | Otomatis (Berhenti saat Stream selesai/fungsi dibatalkan) |
+| **Kapan Digunakan** | Untuk Stream yang berjalan lama/latar belakang, atau di widget state. | Untuk memproses Stream secara berurutan hingga selesai dalam satu scope. |
+
