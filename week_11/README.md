@@ -70,3 +70,15 @@ Oleh: <br>
 | **Pengelolaan Langganan** | Manual (Perlu .cancel() di dispose()) | Otomatis (Berhenti saat Stream selesai/fungsi dibatalkan) |
 | **Kapan Digunakan** | Untuk Stream yang berjalan lama/latar belakang, atau di widget state. | Untuk memproses Stream secara berurutan hingga selesai dalam satu scope. |
 
+---
+
+## Tugas Praktikum 2: <br> `Stream controllers dan sinks`
+
+> **Soal 6** <br>
+> Jelaskan maksud kode langkah 8 dan 10 tersebut!
+↪ Langkah 8 bermaksud untuk menginisialisasi Stream, mulai berlangganan (subscribe) untuk menerima angka baru, dan memastikan antarmuka pengguna (UI) diperbarui setiap kali ada angka baru yang masuk. <br>
+↪ Langkah 10 bermaksud untuk mendefinisikan cara untuk membuat angka acak baru dan memasukkannya ke dalam Stream. Setelah angka ini dikirim, callback stream.listen() pada Langkah 8 akan langsung menangkapnya dan memperbarui UI.
+
+> Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+
+<img src="./image/p2-1.gif" alt="Prototype GIF" width="200" />
