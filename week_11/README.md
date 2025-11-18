@@ -63,12 +63,12 @@ Oleh: <br>
 > **Soal 5** <br>
 > Jelaskan perbedaan menggunakan listen dan await for (langkah 9) !
 
-| **Fitur** | **`Stream.listen()`** | **`await for`** |
-| --- | --- | --- |
-| **Aliran Kontrol** | Non-blokir (Fire and Forget) | Blokir (Menunggu setiap event secara berurutan) |
-| **Diperlukan `async`** | Tidak | Ya, harus berada di fungsi `async` |
-| **Pengelolaan Langganan** | Manual (Perlu .cancel() di dispose()) | Otomatis (Berhenti saat Stream selesai/fungsi dibatalkan) |
-| **Kapan Digunakan** | Untuk Stream yang berjalan lama/latar belakang, atau di widget state. | Untuk memproses Stream secara berurutan hingga selesai dalam satu scope. |
+| **Fitur**                 | **`Stream.listen()`**                                                 | **`await for`**                                                          |
+| ------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| **Aliran Kontrol**        | Non-blokir (Fire and Forget)                                          | Blokir (Menunggu setiap event secara berurutan)                          |
+| **Diperlukan `async`**    | Tidak                                                                 | Ya, harus berada di fungsi `async`                                       |
+| **Pengelolaan Langganan** | Manual (Perlu .cancel() di dispose())                                 | Otomatis (Berhenti saat Stream selesai/fungsi dibatalkan)                |
+| **Kapan Digunakan**       | Untuk Stream yang berjalan lama/latar belakang, atau di widget state. | Untuk memproses Stream secara berurutan hingga selesai dalam satu scope. |
 
 ---
 
@@ -76,9 +76,27 @@ Oleh: <br>
 
 > **Soal 6** <br>
 > Jelaskan maksud kode langkah 8 dan 10 tersebut!
+
 ↪ Langkah 8 bermaksud untuk menginisialisasi Stream, mulai berlangganan (subscribe) untuk menerima angka baru, dan memastikan antarmuka pengguna (UI) diperbarui setiap kali ada angka baru yang masuk. <br>
 ↪ Langkah 10 bermaksud untuk mendefinisikan cara untuk membuat angka acak baru dan memasukkannya ke dalam Stream. Setelah angka ini dikirim, callback stream.listen() pada Langkah 8 akan langsung menangkapnya dan memperbarui UI.
 
 > Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
 
-<img src="./image/p2-1.gif" alt="Prototype GIF" width="200" />
+<img src="./image/p2-1.gif" alt="Prototype GIF" width="200" /><br>
+
+> **Soal 7** <br>
+> Jelaskan maksud kode langkah 13 sampai 15 tersebut!
+
+↪ Tujuan dari Langkah 13 sampai 15 adalah untuk memastikan aplikasi
+dapat menangani pengecualian (exceptions) yang dikirim melalui Stream. Ketika addRandomNumber() dipanggil sekarang, UI tidak akan menerima angka, tetapi akan memicu logika error handling yang disiapkan, membuktikan bahwa aplikasi Anda tahan terhadap kesalahan (robust).
+
+> Kembalikan kode seperti semula pada Langkah 15, comment addError() agar Anda dapat melanjutkan ke praktikum 3 berikutnya.
+
+```Dart
+void addRandomNumber() {
+  Random random = Random();
+  int myNum = random.nextInt(10);
+  numberStream.addNumberToSink(myNum);
+  // numberStream.addError();
+}
+```
