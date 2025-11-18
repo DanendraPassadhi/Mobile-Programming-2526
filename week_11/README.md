@@ -115,3 +115,18 @@ void addRandomNumber() {
 > Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
 
 <img src="./image/p3-1.gif" alt="Prototype GIF" width="200" /><br>
+
+---
+
+## Tugas Praktikum 4: <br> `Subscribe ke stream events`
+
+> **Soal 9** <br>
+> Jelaskan maksud kode langkah 2, 6 dan 8 tersebut!
+
+- **Langkah 2**: Menyimpan `StreamSubscription` ini sangat penting karena objek inilah yang memberikan kendali untuk membatalkan (cancel) langganan `Stream` di kemudian hari, mencegah kebocoran memori.
+- **Langkah 6**: Mencegah kebocoran memori (memory leak). Jika Anda tidak membatalkan langganan, `Stream` akan terus mencoba mengirimkan data ke widget yang sudah tidak ada, menghabiskan sumber daya.
+- **Langkah 8**: Membuat aplikasi lebih robust (tahan banting) dengan mencegah kesalahan saat mencoba mengirim data ke `Stream` yang sudah ditutup. Aplikasi sekarang dapat bereaksi secara elegan jika pengguna mencoba memicu pengiriman data setelah `Stream` dihentikan.
+
+> Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+
+<img src="./image/p4-1.png" alt="Prototype" width="200" /><br>
