@@ -100,3 +100,18 @@ void addRandomNumber() {
   // numberStream.addError();
 }
 ```
+
+---
+
+## Tugas Praktikum 3: <br> `Injeksi data ke streams`
+
+> **Soal 8** <br>
+> Jelaskan maksud kode langkah 1-3 tersebut!
+
+- **Langkah 1**: Mendeklarasikan sebuah variabel instance bernama `transformer` di dalam `_StreamHomePageState`. Keyword late menunjukkan bahwa variabel ini akan diinisialisasi nanti (yaitu di `initState()`), sebelum digunakan. Variabel ini akan menyimpan objek yang bertanggung jawab untuk mengubah data Stream.
+- **Langkah 2**: Mengalikan setiap angka yang masuk dengan 10, mengubah error menjadi angka -1, dan menutup Stream keluaran ketika Stream masukan selesai.
+- **Langkah 3**: Stream asli dihubungkan melalui `transformer` untuk memetakan data dan menangani error internal. Widget kemudian mendengarkan (listen) Stream yang sudah diubah, memastikan `lastNumber` di UI diperbarui dengan nilai hasil transformasi (dikali 10) atau nilai -1 jika terjadi error.
+
+> Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+
+<img src="./image/p3-1.gif" alt="Prototype GIF" width="200" /><br>
