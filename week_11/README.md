@@ -145,7 +145,7 @@ Hasil console: <br>
 ↪ Karena Stream ini dirancang hanya untuk memiliki satu listener aktif pada satu waktu. 
 Setelah listener pertama mulai mendengarkan (.listen()), Stream dianggap "terkunci" (locked), dan listener kedua tidak dapat ditambahkan.
 
-> **Soal 10** <br>
+> **Soal 11** <br>
 > Jelaskan mengapa hal itu bisa terjadi ?
 
 ↪ Karena Stream sekarang adalah Broadcast dan Anda memiliki dua listener yang keduanya memodifikasi variabel `values` yang sama, setiap angka yang dikirimkan akan ditambahkan ke string tampilan sebanyak dua kali.
@@ -153,3 +153,17 @@ Setelah listener pertama mulai mendengarkan (.listen()), Stream dianggap "terkun
 > Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
 
 <img src="./image/p5-2.gif" alt="Prototype GIF" width="200" /><br>
+
+---
+
+## Tugas Praktikum 6: <br> `Multiple stream subscriptionsStreamBuilder`
+
+> **Soal 12** <br>
+> Jelaskan maksud kode pada langkah 3 dan 7 !
+
+↪ Langkah 3: Menciptakan sebuah sumber data (Source Stream) yang secara terus-menerus memancarkan angka acak baru (0-9) ke Stream setiap satu detik. <br>
+↪ Langkah 7: Mendengarkan data secara otomatis dari `numberStream`. Setiap kali angka acak baru datang (setiap detik), StreamBuilder akan membangun ulang (re-render) bagian UI yang menampilkan angka tersebut, sehingga angkanya diperbarui di layar secara reaktif.
+
+> Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+
+<img src="./image/p6-1.gif" alt="Prototype GIF" width="200" /><br>
