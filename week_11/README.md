@@ -130,3 +130,26 @@ void addRandomNumber() {
 > Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
 
 <img src="./image/p4-1.png" alt="Prototype" width="200" /><br>
+
+Hasil console: <br>
+<img src="./image/p4-2.png"/>
+
+---
+
+## Tugas Praktikum 5: <br> `Multiple stream subscriptions`
+
+> **Soal 10** <br>
+> Jelaskan mengapa error itu bisa terjadi ?
+<img src="./image/p5-1.png"/>
+
+↪ Karena Stream ini dirancang hanya untuk memiliki satu listener aktif pada satu waktu. 
+Setelah listener pertama mulai mendengarkan (.listen()), Stream dianggap "terkunci" (locked), dan listener kedua tidak dapat ditambahkan.
+
+> **Soal 10** <br>
+> Jelaskan mengapa hal itu bisa terjadi ?
+
+↪ Karena Stream sekarang adalah Broadcast dan Anda memiliki dua listener yang keduanya memodifikasi variabel `values` yang sama, setiap angka yang dikirimkan akan ditambahkan ke string tampilan sebanyak dua kali.
+
+> Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+
+<img src="./image/p5-2.gif" alt="Prototype GIF" width="200" /><br>
