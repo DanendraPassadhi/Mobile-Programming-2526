@@ -13,7 +13,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter JSON Demo by Danenn',
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+        useMaterial3: true,
       ),
       home: const MyHomePage(),
     );
@@ -28,11 +29,37 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  String pizzaString = '';
+
+  @override
+  void initState() {
+    super.initState();
+    readJsonFile();
+  }
+
+  Future readJsonFile() async {
+    String myString = await DefaultAssetBundle.of(
+      context,
+    ).loadString('assets/pizzalist.json');
+    setState(() {
+      pizzaString = myString;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('JSON')),
-      body: Container(),
+      appBar: AppBar(
+        title: const Text('JSON'),
+        backgroundColor: Theme.of(context).primaryColor,
+        foregroundColor: Colors.white,
+      ),
+      body: pizzaString.isEmpty
+          ? const Center(child: CircularProgressIndicator())
+          : SingleChildScrollView(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(pizzaString),
+            ),
     );
   }
 }
