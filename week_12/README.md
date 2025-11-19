@@ -29,3 +29,61 @@ Oleh: <br>
 }
 ```
 
+> **Soal 2** <br>
+> Masukkan hasil capture layar ke laporan praktikum Anda.
+
+<img src="./image/p1-1.png" alt="Prototype" width="200" />
+
+> **Soal 3** <br>
+> Masukkan hasil capture layar ke laporan praktikum Anda.
+
+<img src="./image/p1-2.png" alt="Prototype" width="200" />
+
+### Output Konsol:
+<img src="./image/p1-3.png" alt="Console"/>
+
+---
+
+## Tugas Praktikum 2: <br> `Handle kompatibilitas data JSON`
+
+### Langkah 1: Simulasikan Error
+
+```JSON
+    { 
+      "id": "1", 
+      "pizzaName": "Margherita", 
+    ...
+```
+
+### Langkah 2: Lihat Error Tipe Data String ke Int
+
+<img src="./image/p2-1.png" alt="Output"/><br>
+
+> **Soal 4** <br>
+> Capture hasil running aplikasi Anda, kemudian impor ke laporan praktikum Anda!
+
+<img src="./image/p2-2.png" alt="Prototype" width="200" />
+
+---
+
+## Tugas Praktikum 3: <br> `Menangani error JSON`
+
+> **Soal 4** <br>
+> - Jelaskan maksud kode lebih safe dan maintainable!
+
+↪ Maksudnya adalah lebih safe/aman dari kesalahan manusia (Human Error) atau bug dan lebih mudah melakukan perubahan pada JSON karena hanya perlu pergantian kode pada satu tempat saja, yaitu pada deklarasi konstanta.
+
+> - Capture hasil running aplikasi Anda, kemudian impor ke laporan praktikum Anda!
+
+<img src="./image/p3-1.png" alt="Prototype" width="200" />
+
+---
+
+## Tugas Praktikum 4: <br> `SharedPreferences`
+### Hasil Langkah 1-12
+
+<img src="./image/p4-1.jpg" alt="Prototype" width="200" />
+
+### Hasil Langkah 13-15
+
+<img src="./image/p4-2.gif" alt="Prototype GIF" width="200" />
