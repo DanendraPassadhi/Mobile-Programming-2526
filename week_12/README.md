@@ -52,7 +52,7 @@ Oleh: <br>
     { 
       "id": "1", 
       "pizzaName": "Margherita", 
-    ...
+    }
 ```
 
 ### Langkah 2: Lihat Error Tipe Data String ke Int
@@ -68,7 +68,7 @@ Oleh: <br>
 
 ## Tugas Praktikum 3: <br> `Menangani error JSON`
 
-> **Soal 4** <br>
+> **Soal 5** <br>
 > - Jelaskan maksud kode lebih safe dan maintainable!
 
 ↪ Maksudnya adalah lebih safe/aman dari kesalahan manusia (Human Error) atau bug dan lebih mudah melakukan perubahan pada JSON karena hanya perlu pergantian kode pada satu tempat saja, yaitu pada deklarasi konstanta.
@@ -85,5 +85,16 @@ Oleh: <br>
 <img src="./image/p4-1.jpg" alt="Prototype" width="200" />
 
 ### Hasil Langkah 13-15
+> **Soal 6** <br>
+> Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
 
 <img src="./image/p4-2.gif" alt="Prototype GIF" width="200" />
+
+---
+
+## Tugas Praktikum 5: <br> `Akses filesystem dengan path_provider`
+
+> **Soal 7** <br>
+> Capture hasil praktikum Anda dan lampirkan di README.
+
+<img src="./image/p5-1.jpg" alt="Prototype" width="200" />
