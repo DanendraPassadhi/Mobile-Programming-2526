@@ -98,3 +98,17 @@ Oleh: <br>
 > Capture hasil praktikum Anda dan lampirkan di README.
 
 <img src="./image/p5-1.jpg" alt="Prototype" width="200" />
+
+---
+
+## Tugas Praktikum 6: <br> `Akses filesystem dengan direktori`
+
+> **Soal 8** <br>
+> - Jelaskan maksud kode pada langkah 3 dan 7 !
+
+↪ **Langkah 3**: Maksudnya langkah ini adalah membuat sebuah fungsi yang bertugas untuk menulis (menyimpan) data teks ke dalam sebuah file di penyimpanan perangkat. <br>
+↪ **Langkah 7**: Maksudnya langkah ini adalah tahap verifikasi atau pembuktian bahwa kode yang telah ditulis pada Langkah 3, 4, 5, dan 6 bekerja dengan benar. Kemudian ketika menekan button fungsi `readFile()` akan membuka file yang tadi ditulis dan mengambil teksnya untuk memperbarui layar dengan `setstate` yang memunculkan nama dan NIM.
+
+> - Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+
+<img src="./image/p6-1.gif" alt="Prototype GIF" width="200" />
