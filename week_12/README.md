@@ -112,3 +112,12 @@ Oleh: <br>
 > - Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
 
 <img src="./image/p6-1.gif" alt="Prototype GIF" width="200" />
+
+---
+
+## Tugas Praktikum 7: <br> `Menyimpan data dengan enkripsi/dekripsi`
+
+> **Soal 9** <br>
+> - Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+
+<img src="./image/p7-1.gif" alt="Prototype GIF" width="200" />
