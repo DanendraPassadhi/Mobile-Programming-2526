@@ -24,3 +24,7 @@ return MaterialApp(
     home: const MyHomePage(),
 );
 ```
+
+> - Capture hasil aplikasi Anda, lalu masukkan ke laporan di README
+
+<img src="./image/p1-1.png" alt="Prototype" width="200" />
