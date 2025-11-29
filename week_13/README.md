@@ -54,3 +54,18 @@ class HttpHelper {
 **Tampilan pada Wiremock**
 
 <img src="./image/p2-2.png" alt="Prototype"/>
+
+---
+
+## Tugas Praktikum 3: <br> `Memperbarui Data di Web Service (PUT)`
+
+> **Soal 2** <br>
+> - Ubah salah satu data dengan Nama dan NIM Anda, lalu perhatikan hasilnya di Wiremock.
+> - Capture hasil aplikasi Anda berupa GIF di README
+
+<img src="./image/p3-1.gif" alt="Prototype" width="200" />
+<br><br>
+
+**Tampilan pada Wiremock**
+
+<img src="./image/p3-2.png" alt="Prototype"/>

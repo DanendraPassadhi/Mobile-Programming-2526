@@ -174,20 +174,33 @@ class _MyHomePageState extends State<MyHomePage> {
                 subtitle: Text(
                   "${snapshot.data![position].description} - € ${snapshot.data![position].price.toString()}",
                 ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PizzaDetailScreen(
+                        pizza: snapshot.data![position],
+                        isNew: false,
+                      ),
+                    ),
+                  );
+                },
               );
             },
           );
         },
       ),
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
+        child: Icon(Icons.add),
         onPressed: () {
           Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => const PizzaDetailScreen()),
+              builder: (context) => const PizzaDetailScreen(),
+            ),
           );
-        }),
+        },
+      ),
     );
   }
 }
