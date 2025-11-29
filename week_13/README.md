@@ -69,3 +69,12 @@ class HttpHelper {
 **Tampilan pada Wiremock**
 
 <img src="./image/p3-2.png" alt="Prototype"/>
+
+---
+
+## Tugas Praktikum 4: <br> `Menghapus Data dari Web Service (DELETE)`
+
+> **Soal 2** <br>
+> - Capture hasil aplikasi Anda berupa GIF di README
+
+<img src="./image/p4-1.gif" alt="Prototype" width="200" />

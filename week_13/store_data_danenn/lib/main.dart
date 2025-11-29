@@ -51,9 +51,12 @@ class _MyHomePageState extends State<MyHomePage> {
   final storage = const FlutterSecureStorage();
   final myKey = 'myPass';
 
+  late Future<List<Pizza>> _pizzasFuture;
+
   @override
   void initState() {
     super.initState();
+    _pizzasFuture = callPizzas();
     getPaths().then((_) {
       myFile = File('$documentsPath/pizzas.txt');
       writeFile();
@@ -158,7 +161,7 @@ class _MyHomePageState extends State<MyHomePage> {
         foregroundColor: Colors.white,
       ),
       body: FutureBuilder(
-        future: callPizzas(),
+        future: _pizzasFuture,
         builder: (BuildContext context, AsyncSnapshot<List<Pizza>> snapshot) {
           if (snapshot.hasError) {
             return const Text('Something went wrong');
@@ -169,22 +172,32 @@ class _MyHomePageState extends State<MyHomePage> {
           return ListView.builder(
             itemCount: (snapshot.data == null) ? 0 : snapshot.data!.length,
             itemBuilder: (BuildContext context, int position) {
-              return ListTile(
-                title: Text(snapshot.data![position].pizzaName),
-                subtitle: Text(
-                  "${snapshot.data![position].description} - € ${snapshot.data![position].price.toString()}",
-                ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => PizzaDetailScreen(
-                        pizza: snapshot.data![position],
-                        isNew: false,
-                      ),
-                    ),
-                  );
+              return Dismissible(
+                key: Key(snapshot.data![position].id.toString()),
+                onDismissed: (direction) async {
+                  HttpHelper helper = HttpHelper();
+                  await helper.deletePizza(snapshot.data![position].id);
+                  setState(() {
+                    _pizzasFuture = callPizzas();
+                  });
                 },
+                child: ListTile(
+                  title: Text(snapshot.data![position].pizzaName),
+                  subtitle: Text(
+                    "${snapshot.data![position].description} - € ${snapshot.data![position].price.toString()}",
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PizzaDetailScreen(
+                          pizza: snapshot.data![position],
+                          isNew: false,
+                        ),
+                      ),
+                    );
+                  },
+                ),
               );
             },
           );
@@ -195,9 +208,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(
-              builder: (context) => const PizzaDetailScreen(),
-            ),
+            MaterialPageRoute(builder: (context) => const PizzaDetailScreen()),
           );
         },
       ),
